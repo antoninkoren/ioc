@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Orientacni Beh - QR Tracker</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <button id="menuToggle">&#9776;</button>
+  <h1>Orientacni Beh</h1>
+</header>
+
+<nav id="sidebar" class="closed">
+  <ul>
+    <li data-view="home">Domů</li>
+    <li data-view="scanner">Scanner</li>
+    <li data-view="history">Historie běhů</li>
+  </ul>
+</nav>
+
+<main id="mainContent">
+  <section id="home" class="view active">
+    <h2>Vítejte!</h2>
+    <p>Začni běh a skenuj QR kódy na trati.</p>
+  </section>
+
+  <section id="scanner" class="view">
+    <h2>Scanner</h2>
+    <video id="video" autoplay></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <div id="scanOutput">Zatím nic naskenováno</div>
+    <button id="startScan">Start Scan</button>
+  </section>
+
+  <section id="history" class="view">
+    <h2>Historie běhů</h2>
+    <ul id="historyList"></ul>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
